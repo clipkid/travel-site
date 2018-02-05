@@ -7,8 +7,10 @@
 @import "modules/_feature-item";
 @import "modules/_footer";
 @import "modules/_generic-content";
+@import "modules/_header";
 @import "modules/_headline";
 @import "modules/_large-hero";
+@import "modules/_nav";
 @import "modules/_page-section";
 @import "modules/_row";
 @import "modules/_section-title";
