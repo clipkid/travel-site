@@ -1,5 +1,6 @@
 import Menu from './modules/Menu';
 import ScrollReveal from './modules/ScrollReveal';
+import StickyHeader from './modules/StickyHeader';
 import $ from 'jquery';
 
 
@@ -7,6 +8,7 @@ var menu = new Menu();
 // var scrollReveal = new ScrollReveal();
 new ScrollReveal($('.feature-item'), '85%');
 new ScrollReveal($('.testimonial'), '60%');
+var stickyHeader = new StickyHeader();
 
 // var $ = require('jquery');
 // // var Person = require('./modules/Person');
