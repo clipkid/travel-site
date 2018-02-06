@@ -11208,11 +11208,15 @@ var _Menu = __webpack_require__(3);
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
-var _ScrollReveal = __webpack_require__(4);
+var _Modal = __webpack_require__(4);
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
+var _ScrollReveal = __webpack_require__(5);
 
 var _ScrollReveal2 = _interopRequireDefault(_ScrollReveal);
 
-var _StickyHeader = __webpack_require__(5);
+var _StickyHeader = __webpack_require__(6);
 
 var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
@@ -11227,6 +11231,7 @@ var menu = new _Menu2.default();
 new _ScrollReveal2.default((0, _jquery2.default)('.feature-item'), '85%');
 new _ScrollReveal2.default((0, _jquery2.default)('.testimonial'), '60%');
 var stickyHeader = new _StickyHeader2.default();
+var modal = new _Modal2.default();
 
 // var $ = require('jquery');
 // // var Person = require('./modules/Person');
@@ -11315,6 +11320,73 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Modal = function () {
+   function Modal() {
+      _classCallCheck(this, Modal);
+
+      this.openModalButton = (0, _jquery2.default)('.open-modal');
+      this.modal = (0, _jquery2.default)('.modal');
+      this.closeModalButton = (0, _jquery2.default)('.modal__close');
+      this.events();
+   }
+
+   _createClass(Modal, [{
+      key: 'events',
+      value: function events() {
+         //click the open modal button
+         this.openModalButton.click(this.openModal.bind(this));
+         //click the close modal button
+         this.closeModalButton.click(this.closeModal.bind(this));
+         //push any key
+         (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
+      }
+   }, {
+      key: 'keyPressHandler',
+      value: function keyPressHandler(e) {
+         if (e.keyCode == 27) {
+            this.closeModal();
+         }
+      }
+   }, {
+      key: 'openModal',
+      value: function openModal() {
+         this.modal.addClass('modal--open');
+         return false;
+      }
+   }, {
+      key: 'closeModal',
+      value: function closeModal() {
+         this.modal.removeClass('modal--open');
+         return false;
+      }
+   }]);
+
+   return Modal;
+}();
+
+exports.default = Modal;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+   value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 var _noframework = __webpack_require__(1);
 
 var _noframework2 = _interopRequireDefault(_noframework);
@@ -11361,7 +11433,7 @@ var ScrollReveal = function () {
 exports.default = ScrollReveal;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11381,7 +11453,7 @@ var _noframework = __webpack_require__(1);
 
 var _noframework2 = _interopRequireDefault(_noframework);
 
-var _jquerySmoothScroll = __webpack_require__(6);
+var _jquerySmoothScroll = __webpack_require__(7);
 
 var _jquerySmoothScroll2 = _interopRequireDefault(_jquerySmoothScroll);
 
@@ -11460,7 +11532,7 @@ var StickyHeader = function () {
 exports.default = StickyHeader;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
