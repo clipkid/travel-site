@@ -1,7 +1,12 @@
 import Menu from './modules/Menu';
+import ScrollReveal from './modules/ScrollReveal';
+import $ from 'jquery';
+
 
 var menu = new Menu();
-
+// var scrollReveal = new ScrollReveal();
+new ScrollReveal($('.feature-item'), '85%');
+new ScrollReveal($('.testimonial'), '60%');
 
 // var $ = require('jquery');
 // // var Person = require('./modules/Person');
